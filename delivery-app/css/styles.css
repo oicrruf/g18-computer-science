@@ -56,6 +56,12 @@ a.navbar-item:hover {
 .card figure img{
     object-fit: cover;
 }
+.card .tag{
+    position: absolute;
+    right:10px;
+    top:10px;
+    font-weight: bold;
+}
 .is-borderless{
     border: none;
     box-shadow: none;
