@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pupusapp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.2.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar is-fixed-top has-shadow is-flex-touch is-justify-content-space-between">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="/">
+                <img src="images/logo.png">
+              </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu is-flex">
+                <div class="navbar-start is-hidden-touch">
+                    <a class="navbar-item">
+                        <b>Restaurantes</b>
+                    </a>
+                    <a class="navbar-item">
+                        <b>Alimentos</b>
+                    </a>
+                </div>
+                <div class="navbar-end is-flex-touch is-justify-content-space-between">
+                    <div class="navbar-item">
+                        <form class="field has-addons">
+                            <div class="control">
+                                <input autocomplete="off" class="input is-borderless is-rounded has-background-light" type="text" placeholder="Buscar...">
+                            </div>
+                            <div class="control">
+                                <a class="button is-rounded is-light">
+                                    <span class="icon is-left">
+                                        <i class="mdi mdi-magnify mdi-24px"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-black is-rounded"><span class="icon is-medium"><i class="mdi mdi-cart"></i></span><b class="is-size-7">0</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="section pt-5 pb-0">
+            <div class="container">
+                <div class="categories is-flex is-justify-content-space-between">
+                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
+                        <a href="#" class="has-text-centered">
+                            <figure class="image">
+                                <img src="images/all.svg">
+                            </figure>
+                            <strong>todos</strong>
+                        </a>
+                    </div>
+                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
+                        <a href="#" class="has-text-centered">
+                            <figure class="image">
+                                <img src="images/eatery.svg">
+                            </figure>
+                            <strong>eatery</strong>
+                        </a>
+                    </div>
+                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
+                        <a href="#" class="has-text-centered">
+                            <figure class="image">
+                                <img src="images/japanese.svg">
+                            </figure>
+                            <strong>japanese</strong>
+                        </a>
+                    </div>
+                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
+                        <a href="#" class="has-text-centered">
+                            <figure class="image">
+                                <img src="images/canteen.svg">
+                            </figure>
+                            <strong>canteen</strong>
+                        </a>
+                    </div>
+                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
+                        <a href="#" class="has-text-centered">
+                            <figure class="image">
+                                <img src="images/pizza.svg">
+                            </figure>
+                            <strong>pizza</strong>
+                        </a>
+                    </div>
+                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
+                        <a href="#" class="has-text-centered">
+                            <figure class="image">
+                                <img src="images/pastry.svg">
+                            </figure>
+                            <strong>pastry</strong>
+                        </a>
+                    </div>
+                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
+                        <a href="#" class="has-text-centered">
+                            <figure class="image">
+                                <img src="images/pasta.svg">
+                            </figure>
+                            <strong>pasta</strong>
+                        </a>
+                    </div>
+                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
+                        <a href="#" class="has-text-centered">
+                            <figure class="image">
+                                <img src="images/pupusas.svg">
+                            </figure>
+                            <strong>pupusa</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr/>
+        <section class="section py-3">
+            <div class="container">
+            <h1 class="title mb-2">¿Qué quieres comer Hoy?</h1>
+            <p class="mb-5">Busca tu restaurante, comida o platillo favorito.</p>
+            <div id="results" class="columns is-multiline">
+                <!--card-->
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="card">
+                        <div class="card-image">
+                        <figure class="image is-16by9">
+                            <img src="https://res.cloudinary.com/jobizil/image/upload/v1602289542/images/restaurant/rhpnydmmfj8kejlzecq6.jpg" alt="Placeholder image">
+                        </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="is-flex is-justify-content-space-between is-align-items-center">
+                                <div class="content mb-0">
+                                    <p class="has-text-weight-semibold mb-0 is-size-4 is-uppercase is-size-4 is-uppercase">foodfusion</p>
+                                    <p class="mb-0 is-size-7">Abraham Adesanya</p>
+                                </div>
+                                <div class="ranking has-text-right">
+                                    <span class="icon-text">
+                                        <span class="icon has-text-success"><i class="mdi mdi-star mdi-18px"></i></span> 
+                                        <span>50</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--card-->
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="card">
+                        <div class="card-image">
+                        <figure class="image is-16by9">
+                            <img src="https://res.cloudinary.com/jobizil/image/upload/v1602289542/images/restaurant/rhpnydmmfj8kejlzecq6.jpg" alt="Placeholder image">
+                        </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="is-flex is-justify-content-space-between is-align-items-center">
+                                <div class="content mb-0">
+                                    <p class="has-text-weight-semibold mb-0 is-size-4 is-uppercase is-size-4 is-uppercase">foodfusion</p>
+                                    <p class="mb-0 is-size-7">Abraham Adesanya</p>
+                                </div>
+                                <div class="ranking has-text-right">
+                                    <span class="icon-text">
+                                        <span class="icon has-text-success"><i class="mdi mdi-star mdi-18px"></i></span> 
+                                        <span>50</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="card">
+                        <div class="card-image">
+                        <figure class="image is-16by9">
+                            <img src="https://res.cloudinary.com/jobizil/image/upload/v1602289542/images/restaurant/rhpnydmmfj8kejlzecq6.jpg" alt="Placeholder image">
+                        </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="is-flex is-justify-content-space-between is-align-items-center">
+                                <div class="content mb-0">
+                                    <p class="has-text-weight-semibold mb-0 is-size-4 is-uppercase is-size-4 is-uppercase">foodfusion</p>
+                                    <p class="mb-0 is-size-7">Abraham Adesanya</p>
+                                </div>
+                                <div class="ranking has-text-right">
+                                    <span class="icon-text">
+                                        <span class="icon has-text-success"><i class="mdi mdi-star mdi-18px"></i></span> 
+                                        <span>50</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="card">
+                        <div class="card-image">
+                        <figure class="image is-16by9">
+                            <img src="https://res.cloudinary.com/jobizil/image/upload/v1602289542/images/restaurant/rhpnydmmfj8kejlzecq6.jpg" alt="Placeholder image">
+                        </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="is-flex is-justify-content-space-between is-align-items-center">
+                                <div class="content mb-0">
+                                    <p class="has-text-weight-semibold mb-0 is-size-4 is-uppercase is-size-4 is-uppercase">foodfusion</p>
+                                    <p class="mb-0 is-size-7">Abraham Adesanya</p>
+                                </div>
+                                <div class="ranking has-text-right">
+                                    <span class="icon-text">
+                                        <span class="icon has-text-success"><i class="mdi mdi-star mdi-18px"></i></span> 
+                                        <span>50</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="card">
+                        <div class="card-image">
+                        <figure class="image is-16by9">
+                            <img src="https://res.cloudinary.com/jobizil/image/upload/v1603060323/images/restaurant/bzciailqusg6mp73j428.jpg" alt="Placeholder image">
+                        </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="is-flex is-justify-content-space-between is-align-items-center">
+                                <div class="content mb-0">
+                                    <p class="has-text-weight-semibold mb-0 is-size-4 is-uppercase is-size-4 is-uppercase">hathaway foods</p>
+                                    <p class="mb-0 is-size-7">Abraham Adesanya</p>
+                                </div>
+                                <div class="ranking has-text-right">
+                                    <span class="icon-text">
+                                        <span class="icon has-text-success"><i class="mdi mdi-star mdi-18px"></i></span> 
+                                        <span>50</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4-desktop is-6-tablet">
+                    <div class="card">
+                        <div class="card-image">
+                        <figure class="image is-16by9">
+                            <img src="https://res.cloudinary.com/jobizil/image/upload/v1603060323/images/restaurant/bzciailqusg6mp73j428.jpg" alt="Placeholder image">
+                        </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="is-flex is-justify-content-space-between is-align-items-center">
+                                <div class="content mb-0">
+                                    <p class="has-text-weight-semibold mb-0 is-size-4 is-uppercase is-size-4 is-uppercase">hathaway foods</p>
+                                    <p class="mb-0 is-size-7">Abraham Adesanya</p>
+                                </div>
+                                <div class="ranking has-text-right">
+                                    <span class="icon-text">
+                                        <span class="icon has-text-success"><i class="mdi mdi-star mdi-18px"></i></span> 
+                                        <span>50</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
