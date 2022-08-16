@@ -7,6 +7,7 @@
     <title>Agenda</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script defer src="js/app.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="columns">
@@ -22,26 +23,40 @@
                     <input type="text" id="peso" name="peso" class="input">
                     <label class="label">Foto</label>
                     <input type="text" id="foto" name="foto" class="input">
-                    
-                    <button class="mt-5 button is-info is-fullwidth">Enviar</button>
+                    <label class="label">Tipo</label>
+
+                    <div class="select is-fullwidth">
+                        <select name="pokemon_type" id="pokemon_type">
+                                <option value="steel">Acero</option>
+                                <option value="water">Agua</option>
+                                <option value="bug">Bicho</option>
+                                <option value="dragon">Dragón</option>
+                                <option value="electico">Eléctrico</option>
+                                <option value="ghost">Fantasma</option>
+                                <option value="fire">Fuego</option>
+                                <option value="fairy">Hada</option>
+                                <option value="ice">Hielo</option>
+                                <option value="fighting">Lucha</option>
+                                <option value="normal">Normal</option>
+                                <option value="grass">Planta</option>
+                                <option value="psychic">Psíquico</option>
+                                <option value="rock">Roca</option>
+                                <option value="dark">Siniestro</option>
+                                <option value="ground">Tierra</option>
+                                <option value="poison">Veneno</option>
+                                <option value="flying">Volador</option>
+                            </select>
+                        </div>
+
+                        <!--Agregar textarea-->
+                        <button class="mt-5 button is-info is-fullwidth">Enviar</button>
+
                 </form>
             </div>
         </div>
         <div class="column">
             <div id="resultados" class="has-background-light p-6">
-                <article class="media has-background-white p-3">
-                    <figure class="media-left">
-                      <p class="image is-64x64">
-                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
-                      </p>
-                    </figure>
-                    <div class="media-content">
-                      <div class="content">
-                        <h4 class="mb-2"><strong>Bulbasaur</strong></h4>
-                        <p><small>001</small></p>
-                      </div>
-                    </div>
-                  </article>
+                
             </div>
         </div>
     </div>
