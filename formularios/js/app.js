@@ -36,7 +36,10 @@ let dibujar = () =>{
 
     for(let i in arreglo){
         let pokemon = arreglo[i];
-        let card = `<article class="media has-background-white p-3">
+        let media =document.createElement("article");
+        media.classList.add("media", "has-background-white", "p-3");
+
+        let card = `
             <figure class="media-left">
             <p class="image is-64x64">
                 <img src="${pokemon.foto}">
@@ -48,10 +51,11 @@ let dibujar = () =>{
                 <p>${pokemon.peso} kg</p>
             </div>
             </div>
-        </article>`;
+        `;
 
+        media.innerHTML= card;
 
-        document.querySelector("#resultados").innerHTML += card;
+        document.querySelector("#resultados").append(media);
     }    
 
 }
