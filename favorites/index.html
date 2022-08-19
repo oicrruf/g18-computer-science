@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="columns">
+      <div class="column">
+        <div class="p-6">
+          <h1 class="is-size-4 has-text-weight-semibold mb-5">
+            Agregar un pokemon
+          </h1>
+          <form id="formulario">
+            <label class="label">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="input" />
+            <label class="label">Número</label>
+            <input type="text" id="numero" name="numero" class="input" />
+            <label class="label">Peso</label>
+            <input type="text" id="peso" name="peso" class="input" />
+            <label class="label">Foto</label>
+            <input type="text" id="foto" name="foto" class="input" />
+            <label class="label">Tipo</label>
+
+            <div class="select is-fullwidth">
+              <select name="pokemon_type" id="pokemon_type">
+                <option value="steel">Acero</option>
+                <option value="water">Agua</option>
+                <option value="bug">Bicho</option>
+                <option value="dragon">Dragón</option>
+                <option value="electico">Eléctrico</option>
+                <option value="ghost">Fantasma</option>
+                <option value="fire">Fuego</option>
+                <option value="fairy">Hada</option>
+                <option value="ice">Hielo</option>
+                <option value="fighting">Lucha</option>
+                <option value="normal">Normal</option>
+                <option value="grass">Planta</option>
+                <option value="psychic">Psíquico</option>
+                <option value="rock">Roca</option>
+                <option value="dark">Siniestro</option>
+                <option value="ground">Tierra</option>
+                <option value="poison">Veneno</option>
+                <option value="flying">Volador</option>
+              </select>
+            </div>
+
+            <!--Agregar textarea-->
+            <button class="mt-5 button is-info is-fullwidth">Enviar</button>
+          </form>
+        </div>
+      </div>
+      <div class="column has-background-light p-6">
+        <div class="buttons">
+          <button id="pila" class="mt-5 button is-warning">Pila</button>
+          <button id="cola" class="mt-5 button is-danger">Cola</button>
+        </div>
+
+        <div id="resultados"></div>
+      </div>
+    </div>
+
+    <script defer src="js/pokemons.js"></script>
+    <script defer src="js/app.js"></script>
+    <script defer src="js/favorites.js"></script>
+  </body>
+</html>
