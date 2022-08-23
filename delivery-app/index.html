@@ -31,16 +31,16 @@
                 </div>
                 <div class="navbar-end is-flex-touch is-justify-content-space-between">
                     <div class="navbar-item">
-                        <form class="field has-addons">
+                        <form class="field has-addons" id="busqueda">
                             <div class="control">
-                                <input autocomplete="off" class="input is-borderless is-rounded has-background-light" type="text" placeholder="Buscar...">
+                                <input id="inputBusqueda" autocomplete="off" class="input is-borderless is-rounded has-background-light" type="text" placeholder="Buscar...">
                             </div>
                             <div class="control">
-                                <a class="button is-rounded is-light">
+                                <button type="button" class="button is-rounded is-light">
                                     <span class="icon is-left">
                                         <i class="mdi mdi-magnify mdi-24px"></i>
                                     </span>
-                                </a>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -58,7 +58,7 @@
             <div class="container">
                 <div class="categories is-flex is-justify-content-space-between">
                     <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
-                        <a href="#" class="has-text-centered">
+                        <a href="#" id="todos" class="has-text-centered">
                             <figure class="image">
                                 <img src="images/all.svg">
                             </figure>
@@ -66,7 +66,7 @@
                         </a>
                     </div>
                     <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
-                        <a href="#" class="has-text-centered">
+                        <a href="#" id="eatery" class="has-text-centered">
                             <figure class="image">
                                 <img src="images/eatery.svg">
                             </figure>
@@ -74,7 +74,7 @@
                         </a>
                     </div>
                     <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
-                        <a href="#" class="has-text-centered">
+                        <a href="#" id="japanese" class="has-text-centered">
                             <figure class="image">
                                 <img src="images/japanese.svg">
                             </figure>
@@ -92,33 +92,9 @@
                     <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
                         <a href="#" class="has-text-centered">
                             <figure class="image">
-                                <img src="images/pizza.svg">
-                            </figure>
-                            <strong>pizza</strong>
-                        </a>
-                    </div>
-                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
-                        <a href="#" class="has-text-centered">
-                            <figure class="image">
-                                <img src="images/pastry.svg">
-                            </figure>
-                            <strong>pastry</strong>
-                        </a>
-                    </div>
-                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
-                        <a href="#" class="has-text-centered">
-                            <figure class="image">
-                                <img src="images/pasta.svg">
-                            </figure>
-                            <strong>pasta</strong>
-                        </a>
-                    </div>
-                    <div class="box mr-2 mb-2 is-flex is-align-items-center is-flex-direction-column">
-                        <a href="#" class="has-text-centered">
-                            <figure class="image">
                                 <img src="images/pupusas.svg">
                             </figure>
-                            <strong>pupusa</strong>
+                            <strong>bukka</strong>
                         </a>
                     </div>
                 </div>
@@ -140,6 +116,7 @@
           </p>
         </div>
       </footer>
-      <script src="js/app.js"></script>
+      <script defer src="js/app.js"></script>
+      <script defer src="js/filters.js"></script>
 </body>
 </html>

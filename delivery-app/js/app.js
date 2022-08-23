@@ -8,7 +8,7 @@ fetch("https://foodbukka.herokuapp.com/api/v1/restaurant")
 });
 
 
-function render(restaurantsArr){
+let render = (restaurantsArr) => {
 
     document.querySelector("#results").innerHTML="";
 
