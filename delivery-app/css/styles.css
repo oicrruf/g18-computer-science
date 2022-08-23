@@ -39,7 +39,8 @@ a.navbar-item:hover {
     background-color: #48c78e;
 }
 .box img{
-    width: 80px;
+    max-width: 80px;
+    width: auto;
     height: 56px;
     margin: 0 auto 5px;
 }
