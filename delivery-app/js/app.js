@@ -1,27 +1,17 @@
-let restaurants=[];
-
-fetch("https://foodbukka.herokuapp.com/api/v1/restaurant")
-.then((response)=>response.json())
-.then((data)=>{
-    restaurants=data.Result;
-    render(restaurants);
-});
-
+let restaurants = [];
 
 let render = (restaurantsArr) => {
+  document.querySelector("#results").innerHTML = "";
 
-    document.querySelector("#results").innerHTML="";
+  for (let i in restaurantsArr) {
+    let col = document.createElement("div");
+    col.classList.add("column", "is-4-desktop", "is-6-tablet");
 
-    for(let i in restaurantsArr){
+    let card = document.createElement("div");
+    card.classList.add("card");
+    card.setAttribute("data-id", restaurantsArr[i].id);
 
-        let col = document.createElement("div");
-        col.classList.add("column", "is-4-desktop", "is-6-tablet");
-
-        let card=document.createElement("div");
-        card.classList.add("card");
-        card.setAttribute("data-id",restaurantsArr[i].id);
-
-        card.innerHTML=`<div class="card-image">
+    card.innerHTML = `<div class="card-image">
                 <figure class="image is-16by9">
                     <img src="${restaurantsArr[i].image}" alt="Placeholder image">
                 </figure>
@@ -42,10 +32,17 @@ let render = (restaurantsArr) => {
                 </div>
             </div>`;
 
-        col.append(card);
-        document.querySelector("#results").append(col);
+    col.append(card);
+    document.querySelector("#results").append(col);
+  }
+};
 
-    }
-}
+fetch("https://foodbukka.herokuapp.com/api/v1/restaurant")
+  .then((response) => response.json())
+  .then((data) => {
+    restaurants = data.Result;
 
+    render(restaurants);
+  });
 
+// canteen, bukka, japanese, eatery
