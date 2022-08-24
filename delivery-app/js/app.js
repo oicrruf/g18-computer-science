@@ -11,7 +11,7 @@ let render = (restaurantsArr) => {
     card.classList.add("card");
     card.setAttribute("data-id", restaurantsArr[i].id);
 
-    card.innerHTML = `<div class="card-image">
+    card.innerHTML = `<div class="card-image" >
                 <figure class="image is-16by9">
                     <img src="${restaurantsArr[i].image}" alt="Placeholder image">
                 </figure>
@@ -30,8 +30,10 @@ let render = (restaurantsArr) => {
                         </span>
                     </div>
                 </div>
-            </div>`;
+            </div>
+            `;
 
+    card.addEventListener("click", ()=> mostrarModal(card.dataset.id));
     col.append(card);
     document.querySelector("#results").append(col);
   }
@@ -46,3 +48,10 @@ fetch("https://foodbukka.herokuapp.com/api/v1/restaurant")
   });
 
 // canteen, bukka, japanese, eatery
+
+const mostrarModal = (id) => {
+  console.log("mostrar modal para: ", id);
+};
+
+// const coffeeWhitSugar = ()=> {}
+// const cafeConAzucar = ()=> {}
