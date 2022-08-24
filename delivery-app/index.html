@@ -131,12 +131,27 @@
             <p class="mb-5">Busca tu restaurante, comida o platillo favorito.</p>
             <div id="results" class="columns is-multiline">
             </div>
-            <div id="modal" class="modal">
-              <div class="modal-background"></div>
+            <div id="modal" class="modal mi-clase-1 mi-clase-2">
+              <div class="modal-background" onclick="mostrarModal()"></div>
               <div class="modal-content">
-                kjhkjsahjhdkashkdjhksjahdkhk
+                <div class="modal-box">
+                  <article class="media">
+                    <div class="media-content">
+                      <div class="content">
+                        <h3 id="restaurant-name"></h3>
+                        <p id="restaurant-address">
+                        <p id="restaurant-phone"></p>
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                  <figure class="image is-16by9">
+
+                    <img id="restaurant-image" class="is-block" src=""/>
+                  </figure>
+                </div>
               </div>
-              <button class="modal-close is-large" aria-label="close"></button>
+              <button class="modal-close is-large" aria-label="close" onclick="mostrarModal()"></button>
             </div>
         </div>
     </main>

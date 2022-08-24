@@ -1,3 +1,9 @@
+const modal = document.querySelector("#modal");
+const rName = document.querySelector("#restaurant-name");
+const rAddress = document.querySelector("#restaurant-address");
+const rPhone = document.querySelector("#restaurant-phone");
+const rImage = document.querySelector("#restaurant-image");
+
 let restaurants = [];
 
 let render = (restaurantsArr) => {
@@ -33,12 +39,54 @@ let render = (restaurantsArr) => {
             </div>
             `;
 
-    card.addEventListener("click", ()=> mostrarModal(card.dataset.id));
+    card.addEventListener("click", () =>
+      mostrarModal(card.dataset.id)
+    );
+
     col.append(card);
     document.querySelector("#results").append(col);
   }
 };
 
+
+
+// canteen, bukka, japanese, eatery
+
+const llenarModal = (restaurant) => {
+// https://foodbukka.herokuapp.com/api/v1/restaurant/62f7182f4a757000045561cf
+
+  const { businessname, address, phone, image } = restaurant.data;
+
+  rName.innerText = businessname;
+  rAddress.innerText = address;
+  rPhone.innerText = phone;
+  rImage.setAttribute('src', image)
+};
+
+const mostrarModal = (id) => {
+  // modal.classList.add('mi-clase-3')
+  // modal.classList.remove('mi-clase-1')
+
+  rName.innerText = "";
+  rAddress.innerText = "";
+  rPhone.innerText = "";
+
+  modal.classList.toggle("is-active");
+  // document.querySelector("#restaurant-name").innerText = name;
+
+  if (id !== undefined) {
+    fetch(`https://foodbukka.herokuapp.com/api/v1/restaurant/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        llenarModal(data);
+      });
+  }
+};
+
+// const coffeeWhitSugar = ()=> {}
+// const cafeConAzucar = ()=> {}
+
+// Todos los restaurantes
 fetch("https://foodbukka.herokuapp.com/api/v1/restaurant")
   .then((response) => response.json())
   .then((data) => {
@@ -46,12 +94,3 @@ fetch("https://foodbukka.herokuapp.com/api/v1/restaurant")
 
     render(restaurants);
   });
-
-// canteen, bukka, japanese, eatery
-
-const mostrarModal = (id) => {
-  console.log("mostrar modal para: ", id);
-};
-
-// const coffeeWhitSugar = ()=> {}
-// const cafeConAzucar = ()=> {}

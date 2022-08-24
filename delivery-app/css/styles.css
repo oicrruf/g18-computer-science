@@ -71,3 +71,17 @@ a.navbar-item:hover {
     box-shadow: none;
     outline: none;
 }
+
+.modal-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-box img{
+  border-radius: 8px;
+}
+
+#restaurant-name{
+  text-transform: uppercase;
+}

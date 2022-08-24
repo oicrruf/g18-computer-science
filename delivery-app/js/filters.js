@@ -8,32 +8,31 @@ let buscar = (evt) => {
   render(filtrados);
 };
 
-let buscarCategoria = (type) => {
-
+let buscarCategoria = (category) => {
   let filtro = restaurants.filter((restaurant) => {
-    return restaurant.restauranttype == type;
+    return restaurant.restauranttype == category;
   });
-
 
   render(filtro);
 };
-
-
 
 //document.querySelector("#busqueda").addEventListener("submit", buscar);
 document.querySelector("#busqueda button").addEventListener("click", buscar);
 // keydown, keyup, keypress
 document.querySelector("#inputBusqueda").addEventListener("keyup", buscar);
 
-document
-  .querySelector("#eatery")
-  .addEventListener("click", () => buscarCategoria("eatery"));
+document.querySelector("#eatery").addEventListener("click", function () {
+  buscarCategoria("eatery");
+});
+
 document
   .querySelector("#japanese")
   .addEventListener("click", () => buscarCategoria("japanese"));
+
 document
   .querySelector("#canteen")
   .addEventListener("click", () => buscarCategoria("canteen"));
+
 document
   .querySelector("#bukka")
   .addEventListener("click", () => buscarCategoria("bukka"));
