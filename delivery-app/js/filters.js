@@ -12,9 +12,15 @@ let buscarCategoria = (category) => {
   let filtro = restaurants.filter((restaurant) => {
     return restaurant.restauranttype == category;
   });
-
   render(filtro);
 };
+
+let reviews = () =>{
+  let filtro = restaurants.filter((restaurant) => {
+    return restaurant.reviews>=50;
+  });
+  render(filtro);
+}
 
 //document.querySelector("#busqueda").addEventListener("submit", buscar);
 document.querySelector("#busqueda button").addEventListener("click", buscar);
@@ -38,5 +44,24 @@ document
   .addEventListener("click", () => buscarCategoria("bukka"));
 
 document.querySelector("#todos").addEventListener("click", function () {
+  render(restaurants);
+});
+
+document.querySelector("#fifty").addEventListener("click",reviews)
+
+document.querySelector("#alfabeto").addEventListener("click",()=>{
+  restaurants.sort(function(a,b){
+    return a.businessname > b.businessname ? 1 : -1;
+    /* El operador ? significa:
+    if(a.businessname > b.businessname)
+        return 1;
+    else
+        return -1;*/
+  });
+  render(restaurants);
+})
+
+document.querySelector("#popular").addEventListener("click",()=>{
+  restaurants.sort((a,b)=>a.reviews<b.reviews?1:-1);
   render(restaurants);
 });
