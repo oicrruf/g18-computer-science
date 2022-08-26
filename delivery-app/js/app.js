@@ -3,8 +3,23 @@ const rName = document.querySelector("#restaurant-name");
 const rAddress = document.querySelector("#restaurant-address");
 const rPhone = document.querySelector("#restaurant-phone");
 const rImage = document.querySelector("#restaurant-image");
-
+const btnFavorites = document.querySelector("#restaurant-add-favorites");
+const favoriteStorage = localStorage.getItem("@favoritos");
 let restaurants = [];
+
+const cargarFavoritos = () => {
+  // console.log(JSON.parse(favoriteStorage));
+
+  // let favoritoIcono = document.querySelectorAll("[data-favorite]")
+  let favoritoIcono = document.querySelectorAll(".mdi.mdi-star.mdi-18px");
+  let starsArray = Array.from(favoritoIcono);
+  
+  starsArray.forEach((elem) => {
+    if (favoriteStorage.indexOf(elem.getAttribute("data-favorite")) !== -1) {
+      elem.classList.toggle("is-invisible");
+    }
+  });
+};
 
 let render = (restaurantsArr) => {
   document.querySelector("#results").innerHTML = "";
@@ -31,7 +46,9 @@ let render = (restaurantsArr) => {
                     </div>
                     <div class="ranking has-text-right">
                         <span class="icon-text">
-                            <span class="icon has-text-success"><i class="mdi mdi-star mdi-18px"></i></span> 
+                            <span  class="icon has-text-success">
+                            <i data-favorite="${restaurantsArr[i].id}" class="mdi mdi-star mdi-18px is-invisible"></i>
+                            </span> 
                             <span>${restaurantsArr[i].reviews}</span>
                         </span>
                     </div>
@@ -39,28 +56,26 @@ let render = (restaurantsArr) => {
             </div>
             `;
 
-    card.addEventListener("click", () =>
-      mostrarModal(card.dataset.id)
-    );
+    card.addEventListener("click", () => mostrarModal(card.dataset.id));
 
     col.append(card);
     document.querySelector("#results").append(col);
   }
+
+  cargarFavoritos();
 };
-
-
 
 // canteen, bukka, japanese, eatery
 
 const llenarModal = (restaurant) => {
-// https://foodbukka.herokuapp.com/api/v1/restaurant/62f7182f4a757000045561cf
+  // https://foodbukka.herokuapp.com/api/v1/restaurant/62f7182f4a757000045561cf
 
   const { businessname, address, phone, image } = restaurant.data;
 
   rName.innerText = businessname;
   rAddress.innerText = address;
   rPhone.innerText = phone;
-  rImage.setAttribute('src', image)
+  rImage.setAttribute("src", image);
 };
 
 const mostrarModal = (id) => {
@@ -70,6 +85,7 @@ const mostrarModal = (id) => {
   rName.innerText = "";
   rAddress.innerText = "";
   rPhone.innerText = "";
+  btnFavorites.setAttribute("id", id);
 
   modal.classList.toggle("is-active");
   // document.querySelector("#restaurant-name").innerText = name;
